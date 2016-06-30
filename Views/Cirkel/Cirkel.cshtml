@@ -1,0 +1,61 @@
+﻿
+
+@model PromatoWebApp.Models.Level
+@{
+    ViewBag.Title = "Cirkel";
+}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("svg").css({ "visibility": "hidden" });
+            });
+            $(".haha").click(function () {
+                $("svg #" + event.target.id).css({ "visibility": "visible" });
+                //$("h4").html("Triggered by " + event.target.id);
+            });
+        });
+        //event.target.ud
+    </script>
+
+</head>
+<body>
+
+    <h2>Cirkel</h2>
+    <div style="float:left;">
+        <h3>Beetje-Statisch menu</h3>
+        <hr />
+        <button class="haha" id="@Model.elementName">@Model.name</button> <br />
+        @foreach (var levelone in Model.subLevels)
+        {
+            <button class="haha" id="@levelone.elementName">@levelone.name</button> <br />
+            if (levelone.subLevels.Count > 0)
+            {
+                foreach (var leveltwo in levelone.subLevels)
+                {
+                    <button class="haha" id="@leveltwo.elementName">@leveltwo.name</button> <br />
+                    if (leveltwo.subLevels.Count > 0)
+                    {
+                        foreach (var levelthree in leveltwo.subLevels)
+                        {
+                            <button class="haha" id="@levelthree.elementName">@levelthree.name</button> <br />
+                            if (levelthree.subLevels.Count > 0)
+                            {
+                                foreach (var levelfour in levelthree.subLevels)
+                                {
+                                    <button class="haha" id="@levelfour.elementName">@levelfour.name</button> <br />
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </div>
+    <div>
+        <p>
+            @Html.Raw(ViewBag.lol)
+        </p>
+    </div>
+</body>

@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Promato Tool</h2>
+
+<p>Xml uploaden</p>
+<ul>
+    <li><a href="~/Promato/Upload">Uploaden</a></li>
+</ul>
+<div id="geheim">
+    <p>Cirkel bekijken?</p>
+    @using (Html.BeginForm("Cirkel", "Promato", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <input type="submit" value="Genereer cirkel" />
+    }
+</div>

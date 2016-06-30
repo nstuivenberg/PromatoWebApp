@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Bedrijf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BedrijfsNaam>Vodafone</BedrijfsNaam>
+  <Afdelingen>
+    <Afdeling AfdelingsID="666">
+      <AfdelingsNaam>USE</AfdelingsNaam>
+      <Afdelingsprojecten>
+        <Project ProjectID="1">
+          <ProjectNaam>Rain</ProjectNaam>
+          <StartBudget>1000</StartBudget>
+          <StartDatum>2011</StartDatum>
+          <EindDatum>2016</EindDatum>
+          <Subprojecten>
+            <Project ProjectID="2">
+              <ProjectNaam>XML IS LEUK!</ProjectNaam>
+              <StartBudget>500</StartBudget>
+              <StartDatum>2012</StartDatum>
+              <EindDatum>2014</EindDatum>
+              <Subprojecten>
+                <Project ProjectID="3">
+                  <ProjectNaam>We zijn zo diep!</ProjectNaam>
+                  <StartBudget>250</StartBudget>
+                  <StartDatum>2012</StartDatum>
+                  <EindDatum>2013</EindDatum>
+                  <Subprojecten>
+                    <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ProjectID="7">
+                      <ProjectNaam>Onder diep</ProjectNaam>
+                      <StartBudget>14</StartBudget>
+                      <StartDatum>2012</StartDatum>
+                      <EindDatum>2013</EindDatum>
+                      <Subprojecten>
+                        <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ProjectID="8">
+                          <ProjectNaam>Onder onder diep</ProjectNaam>
+                          <StartBudget>12</StartBudget>
+                          <StartDatum>2011</StartDatum>
+                          <EindDatum>2013</EindDatum>
+                          <Subprojecten />
+                        </Project>
+                      </Subprojecten>
+                    </Project>
+                  </Subprojecten>
+                </Project>
+                <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ProjectID="6">
+                  <ProjectNaam>XML leren</ProjectNaam>
+                  <StartBudget>250</StartBudget>
+                  <StartDatum>2013</StartDatum>
+                  <EindDatum>2014</EindDatum>
+                  <Subprojecten />
+                </Project>
+              </Subprojecten>
+            </Project>
+          </Subprojecten>
+        </Project>
+        <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ProjectID="0">
+          <ProjectNaam>tNPS verhogen</ProjectNaam>
+          <StartBudget>0</StartBudget>
+          <StartDatum>2016</StartDatum>
+          <EindDatum>2017</EindDatum>
+          <Subprojecten />
+        </Project>
+      </Afdelingsprojecten>
+    </Afdeling>
+    <Afdeling AfdelingsID="88">
+      <AfdelingsNaam>PAY</AfdelingsNaam>
+      <Afdelingsprojecten />
+    </Afdeling>
+    <Afdeling AfdelingsID="124">
+      <AfdelingsNaam>Smartphone Crew</AfdelingsNaam>
+      <Afdelingsprojecten>
+        <Project ProjectID="4">
+          <ProjectNaam>Iedereen 4G</ProjectNaam>
+          <StartBudget>250</StartBudget>
+          <StartDatum>2014</StartDatum>
+          <EindDatum>2017</EindDatum>
+          <Subprojecten>
+            <Project ProjectID="5">
+              <ProjectNaam>Iedereen eeen 4G Smartphone</ProjectNaam>
+              <StartBudget>250</StartBudget>
+              <StartDatum>2014</StartDatum>
+              <EindDatum>2017</EindDatum>
+              <Subprojecten />
+            </Project>
+          </Subprojecten>
+        </Project>
+      </Afdelingsprojecten>
+    </Afdeling>
+  </Afdelingen>
+</Bedrijf>
