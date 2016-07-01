@@ -70,7 +70,7 @@ namespace PromatoWebApp.Controllers
         public async System.Threading.Tasks.Task<ActionResult> Cirkel()
         {
 
-            string apiUrl = "http://ecab2b72-0ee0-4-231-b9ee.azurewebsites.net/api/Cirkel";
+            string apiUrl = "http://localhost:46939/api/Cirkel";
 
 
             //XML-Bestand van de webserver afhalen en omzetten naar XDocument
