@@ -15,10 +15,10 @@ namespace PromatoWebApp.Controllers
     public class CirkelController : Controller
     {
         // GET: Cirkel
-        public ActionResult Index()
+        public String Index()
         {
             Level level = TreeViewList();
-            return View(level);
+            return "Ga naar Cirkel/Cirkel";
             
         }
 
@@ -91,22 +91,7 @@ namespace PromatoWebApp.Controllers
 
             if (xmlBestand != null)
             {
-                /*
-                using (var client = new WebClient())
-                {
-                    //client.Headers[HttpRequestHeader.ContentType] = "application/json";
-                    //client.Headers.Add("Custom", xmlBestand.ToString());
-                    //var response = client.UploadString(apiUrl, "test");
-                    //ViewBag.lol = response.ToString();
 
-                    byte[] postArray = Encoding.ASCII.GetBytes(xmlBestand.ToString());
-                    client.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
-
-                    var response = client.UploadData(apiUrl, postArray);
-
-                    ViewBag.lol = response.ToString();
-                }
-                */
                 using (var client = new HttpClient())
                 {
                     using (var content = new MultipartFormDataContent())
@@ -129,84 +114,20 @@ namespace PromatoWebApp.Controllers
                             FileName = "userxml.xml"
                         };
                         content.Add(fileContent);
-                        // oud
-                        //var result = client.PostAsync(apiUrl, content).Result;
-                        //ViewBag.lol = result.ToString();
-                        //nieuwer
+
                         HttpResponseMessage response = await client.PostAsync(apiUrl, content);
                         if (response.IsSuccessStatusCode)
                         {
                             var data = await response.Content.ReadAsStringAsync();
-                            //var table = Newtonsoft.Json.JsonConvert.DeserializeObject<System.Data.DataTable>(data);
                             System.Diagnostics.Debug.WriteLine("DATA: "+data);
                             ViewBag.lol = data.ToString();
 
                         }
                     }
                 }
-
-
-
-                /*
-                 * OUDE HALF WERKENDE SHIT
-                 * using (HttpClient client = new HttpClient())
-                    {
-                        client.BaseAddress = new Uri(apiUrl);
-                        var content = new FormUrlEncodedContent(new[]
-                        {
-                            new KeyValuePair<string, string>("test", "test")
-                        });
-                        //WEGGEHAALD TIJDENS KEYVALUEPAIR
-                        //client.DefaultRequestHeaders.Accept.Clear();
-                        //client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-
-                        //var httpContent = new StringContent(xmlBestand.ToString(), Encoding.UTF8, "application/xml");
-
-
-
-                        HttpResponseMessage response = await client.PostAsync(apiUrl, content);
-                        if (response.IsSuccessStatusCode)
-                        {
-                            var data = await response.Content.ReadAsStringAsync();
-                            //var table = Newtonsoft.Json.JsonConvert.DeserializeObject<System.Data.DataTable>(data);
-                            ViewBag.lol = data.ToString();
-                using (var client = new WebClient())
-                {
-                    client.Encoding = Encoding.UTF8;
-                    client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.0.3705;)");
-
-                    string data = "kort testje";
-                    byte[] bret = client.UploadData(apiUrl, "POST", System.Text.Encoding.ASCII.GetBytes(data));
-
-                    ViewBag.lol = System.Text.Encoding.ASCII.GetString(bret);
-                }
-
-                using (HttpClient client = new HttpClient())
-                {
-                    client.BaseAddress = new Uri(apiUrl);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-
-                    var httpContent = new StringContent("testvalue", Encoding.UTF8, "application/xml");
-
-                    HttpResponseMessage response = await client.PostAsync(apiUrl, httpContent);
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var data = await response.Content.ReadAsStringAsync();
-                        //var table = Newtonsoft.Json.JsonConvert.DeserializeObject<System.Data.DataTable>(data);
-                        ViewBag.lol = data.ToString();
-                    }
-
-                }
-                */
-
-
-
             }
             Level level = TreeViewList();
             return View(level);
-            //return View();
-
         }
 
         public Level BedrijfNaarLevel(Bedrijf b)

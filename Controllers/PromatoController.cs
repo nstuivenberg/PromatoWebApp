@@ -22,12 +22,6 @@ namespace PromatoWebApp.Controllers
             return View();
         }
 
-        //
-        // GET: HelloWorld/Welcome
-        public string Welcome()
-        {
-            return "JE MOEDER!";
-        }
 
         /// <summary>
         /// Hier staat de code om het geupload bestand te controleren, uploaden en verwerken.
@@ -62,6 +56,11 @@ namespace PromatoWebApp.Controllers
             // return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Test code. Deze methode returnt alleen het XML bestand indient geupload. Anders null
+        /// Kan dus verwijderd worden!
+        /// </summary>
+        /// <returns></returns>
         public XDocument Watch()
         {
             XDocument xmlBestand;

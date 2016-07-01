@@ -162,11 +162,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CirkelController.cs" />
     <Compile Include="Controllers\PromatoController.cs" />
-    <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\IApiClient.cs" />
     <Compile Include="Models\Afdeling.cs" />
     <Compile Include="Models\Bedrijf.cs" />
     <Compile Include="Models\Level.cs" />
